@@ -1,0 +1,106 @@
+.filter {
+  padding: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--header--bg);
+  border-radius: var(--brad-2);
+  box-shadow: var(--box-shadow);
+  border: 2px solid var(--border-color-2);
+
+  &__select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+
+    border-radius: var(--brad-1);
+    overflow: hidden;
+    border: 2px solid var(--border-color-2);
+    font-weight: 600;
+
+    select {
+      padding: 0 1rem;
+      outline: none;
+      appearance: none;
+      border: 0;
+      flex: 1;
+
+      color: var(--color--white);
+      background-color: var(--events--bg);
+
+      cursor: pointer;
+    }
+
+    &::after {
+      position: absolute;
+      content: "\25BC";
+      padding: 1em;
+      content: "\25BC";
+
+      color: var(--color--white);
+      top: 0;
+      right: -4px;
+      height: 100%;
+
+      background-color: var(--border-color-2);
+      transition: 0.25s all ease;
+      pointer-events: none;
+
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.theme-toggler {
+  display: flex;
+  align-items: center;
+
+  &__checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__checkbox:checked + label {
+    background-color: var(--header--bg);
+  }
+
+  &__checkbox:checked + label::after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+
+  &__label {
+    position: relative;
+    width: 54px;
+    height: 29px;
+    background: var(--body--bg);
+    display: block;
+    border-radius: 100px;
+    cursor: pointer;
+
+    transition: background-color 0.25s ease-in-out;
+    border: 2px solid var(--border-color-2);
+    text-indent: -9999px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: calc(100% - 6px);
+      background: var(--color--white);
+      border-radius: 90px;
+      transition: 0.3s;
+    }
+
+    &:active::after {
+      width: 40px;
+    }
+  }
+}
