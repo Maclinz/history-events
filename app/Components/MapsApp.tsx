@@ -105,7 +105,7 @@ function MapsApp() {
                 onClick={() => handleFavouriteClick(activeEvent.id)}
               >
                 {favourites.includes(activeEvent.id) ? (
-                  <span>{fullStar} Unfavoutite</span>
+                  <span>{fullStar} Unfavourite</span>
                 ) : (
                   <span>{emptyStar} Favourite</span>
                 )}
